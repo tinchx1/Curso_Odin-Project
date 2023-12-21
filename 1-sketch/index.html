@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sketch</h1>
+    </header>
+    <main>
+        <div class="button_container">
+            <label for="pixelRange">Tamaño del Pixel:</label>
+            <input type="range" id="pixelRange" min="1" max="50" value="16">
+            <label for="colorPicker">Color del Pixel:</label>
+            <input type="color" id="colorPicker" value="#3498db">
+            <button id="btnNewGrid">Nueva Cuadrícula</button>        </div>
+        <div id="grid-container"></div>
+    </main>      
+    <footer>
+        <p>&copy; 2024 tinchx1. Todos los derechos reservados.</p>
+        <p>Sígueme en GitHub:</p>
+        <ul>
+            <li><a href="https://github.com/tinchx1">GitHub - tinchx1</a></li>
+        </ul>
+    </footer>    
+    <script src="app.js"></script>
+</body>
+</html>

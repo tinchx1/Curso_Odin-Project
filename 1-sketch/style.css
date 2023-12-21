@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Cambia la fuente del texto en todo el cuerpo */
+    line-height: 1.6; /* Ajusta la altura de línea para mejorar la legibilidad */
+    color: #333;
+}
+
+h1 {
+    margin: 5px 0;
+    font-size: 90px;
+    color: #333;
+    text-align: center;
+}
+
+main {
+    display: flex;
+ /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
+    max-width: 1200px; /* Ajusta este valor según sea necesario */
+    margin: 0 auto;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(var(--side-length), 1fr);
+    grid-template-rows: repeat(var(--side-length), 1fr);
+    gap: 1px; /* Añadimos un pequeño espacio entre los elementos para simular un borde */
+    margin: 50px;
+    width: 500px;
+    height: 500px;
+    max-width: 100%; /* Garantiza que no se desborde en pantallas pequeñas */
+    max-height: 100%;
+    margin: 50px auto;
+    cursor: crosshair;
+}
+
+.grid-item {
+    flex: 1;
+    background-color: #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+.button_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribuye uniformemente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin: 20px;
+    background-color: #f0f0f0; /* Añade un color de fondo al contenedor de funcionalidades */
+    padding: 10px; /* Añade un espacio interno al contenedor de funcionalidades */
+    border-radius: 8px; /* Añade bordes redondeados al contenedor de funcionalidades */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave al contenedor de funcionalidades */
+    padding: 20px;
+}
+label,
+#btnNewGrid {
+    margin-top: 20px; /* Espaciado entre los elementos */
+}
+#btnNewGrid {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #grid-container {
+        margin: 20px auto;
+    }
+}
