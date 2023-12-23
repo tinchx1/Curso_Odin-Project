@@ -21,6 +21,9 @@ def subir_a_github(commit_msg):
         # Realizar commit con el mensaje proporcionado
         subprocess.run(["git", "commit", "-m", commit_msg])
 
+        # Realizar pull antes de empujar para evitar conflictos
+        subprocess.run(["git", "pull", "--rebase"])
+
         # Subir los cambios al repositorio remoto (por ejemplo, origin)
         subprocess.run(["git", "push", "origin", "main"])
 
