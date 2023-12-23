@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-def subir_a_github(commit_msg):
+def subir_a_github(commit_msg, main):
     try:
         # Comprobar si hay cambios sin confirmar
         status_output = subprocess.check_output(["git", "status", "--porcelain"])
@@ -11,6 +11,9 @@ def subir_a_github(commit_msg):
             # Realizar un commit con cambios sin confirmar
             subprocess.run(["git", "add", "."])
             subprocess.run(["git", "commit", "-m", "Commit de cambios locales"])
+
+        # Configurar información de rastreo para la rama actual
+        subprocess.run(["git", "branch", "--set-upstream-to=origin/"+main, main])
 
         # Actualizar cambios remotos antes de agregar archivos locales
         subprocess.run(["git", "pull", "--rebase"])
@@ -24,13 +27,13 @@ def subir_a_github(commit_msg):
         # Realizar pull antes de empujar para evitar conflictos
         subprocess.run(["git", "pull", "--rebase"])
 
-        # Subir los cambios al repositorio remoto (por ejemplo, origin)
-        subprocess.run(["git", "push", "origin", "main"])
+        # Subir los cambios al repositorio remoto
+        subprocess.run(["git", "push", "origin", main])
 
         print("¡Subida exitosa a GitHub!")
 
     except Exception as e:
         print(f"Error al subir a GitHub: {e}")
 
-# Llamada a la función con un mensaje de commit
-subir_a_github("Añadir cambios automáticos con el script")
+# Llamada a la función con un mensaje de commit y el nombre de la rama
+subir_a_github("Añadir cambios automáticos con el script", "main")
