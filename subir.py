@@ -3,6 +3,9 @@ import subprocess
 
 def subir_a_github(commit_msg):
     try:
+        # Actualizar cambios remotos antes de agregar archivos locales
+        subprocess.run(["git", "pull", "--rebase"])
+
         # Agregar todos los archivos al área de preparación
         subprocess.run(["git", "add", "."])
 
