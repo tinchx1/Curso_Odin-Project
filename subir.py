@@ -10,7 +10,7 @@ def subir_a_github(commit_msg):
         subprocess.run(["git", "commit", "-m", commit_msg])
 
         # Subir los cambios al repositorio remoto (por ejemplo, origin)
-        subprocess.run(["git", "push", "origin", "nombre_de_tu_rama"])
+        subprocess.run(["git", "push", "origin", "main"])
 
         print("¡Subida exitosa a GitHub!")
 
