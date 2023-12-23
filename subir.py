@@ -3,6 +3,15 @@ import subprocess
 
 def subir_a_github(commit_msg):
     try:
+        # Comprobar si hay cambios sin confirmar
+        status_output = subprocess.check_output(["git", "status", "--porcelain"])
+        cambios_sin_confirmar = status_output.strip()
+
+        if cambios_sin_confirmar:
+            # Realizar un commit con cambios sin confirmar
+            subprocess.run(["git", "add", "."])
+            subprocess.run(["git", "commit", "-m", "Commit de cambios locales"])
+
         # Actualizar cambios remotos antes de agregar archivos locales
         subprocess.run(["git", "pull", "--rebase"])
 
