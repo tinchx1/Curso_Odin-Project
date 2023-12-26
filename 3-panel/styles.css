@@ -1,0 +1,363 @@
+/* Estilos globales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos del contenedor principal */
+.container {
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr 2fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "sidebar header header header"
+    "sidebar main main tabs"
+    "sidebar main main tabs"
+    "sidebar main main tabs";
+  min-height: 100vh;
+}
+
+/* Estilos de la barra lateral (sidebar) */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+  max-width: 390px;
+  min-width: 300px;
+}
+
+.sidebar h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  padding-left: 40px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 40px;
+  font-size: 20px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.material-icons {
+  margin-right: 8px;
+}
+
+.bigger {
+  font-size: 40px;
+}
+
+.space-differentiator {
+  height: 15px;
+  margin-bottom: 8px;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.sidebar h1 i,
+ul li i {
+  margin-right: 10px;
+}
+
+.sidebar ul li .icon-text {
+  margin-left: 5px;
+}
+
+/* Estilos del encabezado (header) */
+.header {
+  grid-area: header;
+  background-color: #ffffff;
+  padding: 1.5rem 4rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos de la barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-btn i {
+  color: #3498db;
+}
+
+input {
+  padding: 12px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 1rem;
+  margin-left: 8px;
+  width: 600px;
+}
+
+input:focus {
+  border: 2px solid #267bb5;
+  outline: none;
+}
+
+/* Estilos de la información del usuario */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.notification-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.notification-btn i {
+  color: #3498db;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.profile-details {
+  text-align: right;
+}
+
+.username,
+.full-name {
+  margin: 0;
+}
+
+/* Estilos de la barra inferior (bottom-nav) */
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* Estilos de la sección del perfil (perfil-container) */
+.perfil-container {
+  display: flex;
+  align-items: center;
+}
+
+.small-profile-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.user-greeting {
+  text-align: left;
+}
+
+.user-greeting p {
+  margin: 5px 0;
+}
+
+.username {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Estilos de los botones de acción (action-buttons) */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-buttons button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-left: 40px;
+  font-size: 17px;
+}
+
+.action-buttons button:hover {
+  background-color: #267bb5;
+}
+
+/* Estilos de los títulos de los posts (title-posts) */
+.title-posts {
+  color: #3498db;
+  padding-left: 15px;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+/* Estilos de la sección principal (main) */
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+}
+
+/* Estilos del contenido principal (main-content) */
+.main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-height: 100%;
+  overflow: auto;
+}
+
+/* Estilos de los posts (post) */
+.post {
+  background-color: #ffffff;
+  padding: 16px;
+  border: 1px solid #dcdcdc;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-radius: 6px;
+  margin: 0px 1rem;
+  max-height: 200px;
+}
+
+.post h4 {
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.post p {
+  color: #555;
+}
+
+.buttons-container {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+}
+
+.buttons-container button {
+  background-color: transparent;
+  color: #3498db;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.buttons-container button:hover {
+  color: #267bb5;
+}
+
+/* Estilos de las pestañas (tabs) */
+.tabs {
+  grid-area: tabs;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  background-color: #f0f0f0;
+}
+
+/* Estilos de las pestañas (tabs) */
+.tab-list {
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  color: #555;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.tab-list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-content {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-content h4,
+.tab-content p {
+  margin: 0.3rem 0 0;
+}
+
+/* Estilo específico para el último elemento de la lista */
+.tab-list li:last-child .tab-content {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* Estilos de la imagen redonda (round-image) */
+.round-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+/* Estilos del contenedor del perfil (profile-container) */
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos de la información del perfil (profile-info) */
+.profile-info {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.profile-info p {
+  margin: 0.2rem 0;
+}
+
+/* Estilos específicos para el último perfil de la lista */
+.tab-list li:last-child .profile-container {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Fin del código */
+
+
+
+
+
+
+
+
+
+
