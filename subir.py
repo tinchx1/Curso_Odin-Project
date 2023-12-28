@@ -12,7 +12,7 @@ def subir_a_github(commit_msg, main):
             subprocess.run(["git", "add", "."])
             subprocess.run(["git", "commit", "-m", "Commit de cambios locales"])
 
-        # Configurar información de rastreo para la rama actual
+        # Configurar información de rastreo para la rama actualÑ
         subprocess.run(["git", "branch", "--set-upstream-to=origin/"+main, main])
 
         # Actualizar cambios remotos antes de agregar archivos locales
