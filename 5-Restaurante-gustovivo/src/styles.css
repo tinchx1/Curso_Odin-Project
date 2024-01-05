@@ -1,0 +1,419 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Fondo de la sección */
+}
+/* Aplicar overflow: hidden; solo a un contenedor específico */
+#content {
+    overflow: hidden;
+}
+
+/* Restaurar el overflow: visible; para html y body */
+html, body {
+    overflow: visible;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    background: url('images/fondo-restaurante.jpg') no-repeat;
+    background-position: center;
+    background-size: cover; /* Ajuste para cubrir toda el área */
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav li {
+    margin-right: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease; /* Agregado para suavizar la transición del color al hacer hover */
+}
+
+nav a:hover {
+    color: #ffd700; /* Color azul al hacer hover */
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif; /* Cambiado a la fuente Playfair Display */
+    font-weight: 700; /* Ajustado el peso de la fuente para darle más presencia */
+    font-size: 5.5em;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1.6em;
+    background-color: #ff6600;
+    color: white; /* Agregado para mejorar la legibilidad del texto */
+    border: 2px solid #ff6600; /* Agregado un borde para darle un toque visual */
+    border-radius: 5px; /* Agregado para suavizar las esquinas del botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transiciones suavizadas para varios atributos */
+}
+
+button:hover {
+    background-color: #cc5500;
+    border-color: #cc5500;
+}
+
+.section-us h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3em;
+    color: #ffd700; /* Añadido para coincidir con el color dorado especificado */
+}
+
+.seccion-cartas {
+    display: flex;
+    max-width: 1120px;
+    margin: 20px auto; /* Ajustado para dar espacio entre las secciones */
+}
+
+.carta-imagen,
+.carta-texto {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.carta-imagen {
+    background-image: url('images/pexels-juan-c-palacios-3438708.jpg');
+    background-position: center center;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+.carta-texto {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 1.3rem;
+    margin-left: 20px;
+}
+
+.texto-seccion {
+    padding: 0 1rem;
+    background: linear-gradient(to right, #222, #444);
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+
+
+
+h2, h1 {
+    color: #ffd700; /* Color dorado para el encabezado */
+}
+
+
+
+
+
+.platos-destacados {
+    padding: 0 1.5rem;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.platos-destacados h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3em;
+    padding-bottom: 1.5rem;
+}
+
+.bentogrid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(2, 280px); /* Tres columnas del mismo tamaño en la primera fila */
+    gap: 1rem; /* Espacio entre los elementos */
+    max-width: 1200px; /* Ancho máximo de la grilla */
+    margin: 0 auto; /* Centrar la grilla en el contenedor */
+}
+
+.bento-item {
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden; /* Para asegurar que las imágenes no se desborden */
+    border-radius: 8px;
+}
+
+.medium {
+    grid-column: span 1;
+    height: 275px;
+    position: relative;
+}
+
+.medium h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Color del texto sobre la imagen */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad del texto */
+}
+
+.medium img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */ /* Bordes redondeados para las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar la imagen */
+    transition: transform 0.3s ease; /* Agregado un efecto de transición para la transformación en hover */
+}
+
+.medium:hover img {
+    transform: scale(1.1); /* Efecto de escala al hacer hover sobre la imagen */
+}
+
+.large {
+    grid-column: span 2; /* Ocupa dos columnas en la segunda fila */
+}
+
+.small {
+    grid-column: span 1; /* Ocupa una columna en la segunda fila */
+}
+
+.large {
+    grid-column: span 2;
+    height: 275px;
+    position: relative;
+}
+
+.large h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Color del texto sobre la imagen */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad del texto */
+}
+
+.large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar la imagen */
+    transition: transform 0.3s ease; /* Agregado un efecto de transición para la transformación en hover */
+    object-position: center;
+}
+
+.large:hover img {
+    transform: scale(1.1); /* Efecto de escala al hacer hover sobre la imagen */
+}
+
+
+.medium h4,
+.large h4 {
+    margin: 10px 0; /* Agregado un margen para separar el texto del borde del contenedor */
+    font-family: 'Georgia', serif; /* Cambiada la fuente para que tenga relación con platos */
+    font-size: 2.5rem; /* Ajustada la tamaño del texto */ /* Ajustada la altura de línea para mejorar la legibilidad */
+}
+
+.menu-button {
+    margin: 50px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: #cc5500;
+}
+
+.reservas {
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+  
+  .styled-form {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #333; /* Fondo más oscuro */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+    text-align: left;
+  }
+  
+  .styled-form label {
+    color: #f0f0f0;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .styled-form input {
+    width: 100%; /* Ajuste de tamaño, ocupando menos espacio */
+    padding: 10px; /* Aumenté el padding para un mejor aspecto */
+    margin-bottom: 16px;
+    background-color: #444; /* Fondo más oscuro para los inputs */
+    color: #fff;
+    border: 1px solid #666; /* Borde más claro */
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total */
+  }
+  
+  .styled-form button {
+    width: 100%;
+    padding: 12px; /* Aumenté el padding para un mejor aspecto */
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Estilo adicional para el hover del botón */
+  .styled-form button:hover {
+    background-color: #e55d00;
+  }
+  
+  .styled-form input:focus {
+    outline: none; /* Elimina el contorno al enfocar */
+    border-color: #ff6600; /* Cambia el color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.8); /* Agrega una sombra al enfocar */
+  }
+
+
+footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ff6600;
+}
+
+footer a:hover {
+    color: #cc5500;
+}
+
+
+.menu {
+    margin: 0 auto;
+    padding: 3rem;
+    max-width: 1000px;
+}
+
+.menu h2 {
+    text-align: center;
+    color: #ffd700;
+}
+
+.menuItem {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 0;
+}
+
+.menuItem h3 {
+    color: #f0f0f0;
+}
+
+.menuItem p.price {
+    color: #ccc;
+    font-weight: bold;
+}
+.menuItem:last-child {
+    border-bottom: none; /* Elimina el borde inferior del último elemento para evitar duplicados */
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .bentogrid {
+        grid-template-columns: repeat(2, 1fr); /* Una sola columna */
+        grid-template-rows: auto; /* Ajusta el número de filas según el contenido */
+    }
+
+    .medium {
+        grid-column: span 1; /* Ambos ocupan dos columnas */
+    }
+    .large,
+    .fideos {
+        grid-column: span 2; /* Ambos ocupan dos columnas */
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 50px;
+    }
+    .seccion-cartas {
+        flex-direction: column;
+    }
+
+
+    .platos-destacados h2 {
+        font-size: 37px;
+    }
+
+    .bentogrid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
